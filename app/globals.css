@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.input {
+  @apply rounded-md border px-4 py-2 text-base shadow-sm transition duration-150 ease-in-out focus:outline-none;
+}
+
+.input-bordered {
+  @apply input border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50;
+}
+
+.btn {
+  @apply cursor-pointer rounded-md border border-transparent px-4 py-2 font-semibold text-white transition duration-150 ease-in-out focus:outline-none;
+}
+
+.btn-primary {
+  @apply btn bg-blue-500 hover:bg-blue-600;
+}
+
+.btn-success {
+  @apply btn bg-green-500 hover:bg-green-600;
+}
+
+.btn-error {
+  @apply rounded bg-red-500 px-4 py-2 text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50;
+}
+
+.radio {
+  @apply cursor-pointer;
+}
+
+.radio-primary:checked {
+  @apply border-transparent bg-blue-500;
+}
+
+.radio-primary {
+  @apply border-blue-500 text-blue-500 focus:ring-blue-500;
+}
+
+.radio-success:checked {
+  @apply border-transparent bg-green-500;
+}
+
+.radio-success {
+  @apply border-green-500 text-green-500 focus:ring-green-500;
+}
+
+.radio-error:checked {
+  @apply border-transparent bg-red-500;
+}
+
+.radio-error {
+  @apply border-red-500 text-red-500 focus:ring-red-500;
+}

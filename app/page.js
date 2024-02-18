@@ -12,13 +12,13 @@ export default function Page() {
           </Link>
           <div>
             <Link href="/login">
-              <span className="mr-4 rounded-md border border-blue-600 bg-white px-4 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50 md:px-5 md:py-2.5 md:text-base">
-                Login
+              <span className="rounded-md border border-blue-600 bg-white px-4 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50 md:px-5 md:py-2.5 md:text-base">
+                Autentificare
               </span>
             </Link>
-            <Link href="/sign-up">
-              <span className="rounded-md border border-transparent bg-green-600 px-4 py-2 text-sm font-medium text-white hover:bg-green-700 md:px-5 md:py-2.5 md:text-base">
-                Signup
+            <Link href="/sign-up" className="hidden sm:inline-block">
+              <span className="ml-4 rounded-md border border-transparent bg-green-600 px-4 py-2 text-sm font-medium text-white hover:bg-green-700 md:px-5 md:py-2.5 md:text-base">
+                Înregistrare
               </span>
             </Link>
           </div>
