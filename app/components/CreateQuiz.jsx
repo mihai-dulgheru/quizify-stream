@@ -105,6 +105,7 @@ export default function CreateQuiz({ userId }) {
         throw new Error('Eroare la salvarea quiz-ului');
       }
       router.push('/dashboard');
+      router.refresh();
       toast.success('Quiz salvat cu succes');
     } catch (error) {
       toast.error('Eroare la salvarea quiz-ului');

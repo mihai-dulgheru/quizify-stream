@@ -6,6 +6,7 @@ import QuizCard from './QuizCard';
 import QuizDetails from './QuizDetails';
 import QuizTitleInput from './QuizTitleInput';
 import SignUpForm from './SignUpForm';
+import ViewQuiz from './ViewQuiz';
 import WrongAnswer from './WrongAnswer';
 
 export {
@@ -17,5 +18,6 @@ export {
   QuizDetails,
   QuizTitleInput,
   SignUpForm,
+  ViewQuiz,
   WrongAnswer,
 };

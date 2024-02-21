@@ -1,26 +1,18 @@
-import prisma from '@/prisma/client';
 import { cookies } from 'next/headers';
 import Link from 'next/link';
-
-async function getData(userId) {
-  const quizzes = await prisma.quiz.findMany({
-    select: { id: true, title: true },
-    where: { userId },
-  });
-  return quizzes;
-}
+import { getQuizzes } from '../utils/get-quizzes';
 
 export default async function Page() {
   const cookieStore = cookies();
   const user = JSON.parse(cookieStore.get('user').value);
-  const quizzes = await getData(user.id);
+  const quizzes = await getQuizzes(user.id);
 
   return (
     <>
       {quizzes && quizzes.length > 0 ? (
         <div className="p-8">
           <h2 className="mb-4 text-center text-2xl font-bold">
-            Quizz-urile tale
+            Quiz-urile tale
           </h2>
           <ul className="list-inside list-disc">
             {quizzes.map((quiz) => (
@@ -28,7 +20,9 @@ export default async function Page() {
                 key={quiz.id}
                 className="mb-2 cursor-pointer text-blue-600 hover:underline"
               >
-                <Link href={`/dashboard/quizzes/${quiz.id}`}>{quiz.title}</Link>
+                <Link href={`/dashboard/quizzes/${quiz.id}/view`}>
+                  {quiz.title}
+                </Link>
               </li>
             ))}
           </ul>

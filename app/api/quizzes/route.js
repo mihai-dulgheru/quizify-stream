@@ -27,7 +27,6 @@ export async function POST(request) {
       { status: 200, headers: { 'Content-Type': 'application/json' } }
     );
   } catch (error) {
-    console.log('🚀 ~ POST ~ error:', error);
     return new Response(JSON.stringify({ message: 'Something went wrong' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
