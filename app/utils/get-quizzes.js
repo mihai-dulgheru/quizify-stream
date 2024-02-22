@@ -6,5 +6,6 @@ export const getQuizzes = cache(async (userId) => {
     select: { id: true, title: true },
     where: { userId },
   });
+
   return quizzes;
 });
