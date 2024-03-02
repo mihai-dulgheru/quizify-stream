@@ -1,5 +1,7 @@
-const { PrismaClient } = require('@prisma/client');
-const { hashSync } = require('bcryptjs');
+import { PrismaClient } from '@prisma/client';
+import bcryptjs from 'bcryptjs';
+const { hashSync } = bcryptjs;
+
 const prisma = new PrismaClient();
 
 async function main() {
@@ -10,7 +12,7 @@ async function main() {
   await prisma.user.deleteMany();
 
   // Seed the database
-  const user = await prisma.user.create({
+  await prisma.user.create({
     data: {
       email: 'test@example.com',
       password: hashSync('securepassword'),
@@ -51,14 +53,11 @@ async function main() {
       },
     },
   });
-
-  console.log({ user });
 }
 
 main()
   .catch((e) => {
     console.error(e);
-    process.exit(1);
   })
   .finally(async () => {
     await prisma.$disconnect();

@@ -1,15 +1,8 @@
-import { QuizCard } from '@/app/components';
-import prisma from '@/prisma/client';
-
-async function getData() {
-  const quizzes = await prisma.quiz.findMany({
-    select: { id: true, title: true },
-  });
-  return quizzes;
-}
+import { QuizCard } from '@/components';
+import { getQuizzes } from '../../utils/get-quizzes';
 
 export default async function Page() {
-  const quizzes = await getData();
+  const quizzes = await getQuizzes();
 
   return (
     <div className="p-8">

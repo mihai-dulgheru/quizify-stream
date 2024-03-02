@@ -1,8 +1,8 @@
-import { CreateQuiz } from '@/components';
+import { ImportQuiz } from '@/components';
 import { withUser } from '@/hocs';
 
 function Page({ user }) {
-  return <CreateQuiz userId={user?.id} />;
+  return <ImportQuiz userId={user?.id} />;
 }
 
 export default withUser(Page);

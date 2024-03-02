@@ -1,11 +1,11 @@
 'use client';
 
+import { validateQuiz } from '@/utils/quiz-validation';
 import crypto from 'crypto';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { Question, QuizTitleInput } from '.';
-import { validateQuiz } from '../utils/quiz-validation';
 
 const generateId = () => {
   return crypto.randomBytes(4).toString('hex');

@@ -1,11 +1,11 @@
-import { ViewQuiz } from '@/app/components';
-import { getQuiz } from '@/app/utils/get-quiz';
-import { cookies } from 'next/headers';
+import { ViewQuiz } from '@/components';
+import { withUser } from '@/hocs';
+import { getUserQuiz } from '@/utils/get-user-quiz';
 
-export default async function Page({ params: { id } }) {
-  const cookieStore = cookies();
-  const user = JSON.parse(cookieStore.get('user').value);
-  const quiz = await getQuiz(user.id, id);
+async function Page({ params: { id }, user }) {
+  const quiz = await getUserQuiz(user?.id, id);
 
   return <ViewQuiz quiz={quiz} />;
 }
+
+export default withUser(Page);

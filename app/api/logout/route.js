@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers';
 
-export async function POST(request) {
+export async function POST() {
   try {
     cookies().delete('user');
     return new Response(JSON.stringify({ message: 'Logout successful' }), {

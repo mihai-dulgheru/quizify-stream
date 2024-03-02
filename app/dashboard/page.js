@@ -1,11 +1,9 @@
-import { cookies } from 'next/headers';
+import { withUser } from '@/hocs';
 import Link from 'next/link';
-import { getQuizzes } from '../utils/get-quizzes';
+import { getUserQuizzes } from '../../utils/get-user-quizzes';
 
-export default async function Page() {
-  const cookieStore = cookies();
-  const user = JSON.parse(cookieStore.get('user').value);
-  const quizzes = await getQuizzes(user.id);
+async function Page({ user }) {
+  const quizzes = await getUserQuizzes(user?.id);
 
   return (
     <>
@@ -47,3 +45,5 @@ export default async function Page() {
     </>
   );
 }
+
+export default withUser(Page);

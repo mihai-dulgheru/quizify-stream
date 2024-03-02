@@ -1,5 +1,5 @@
+import { LogoutButton } from '@/components';
 import Link from 'next/link';
-import { LogoutButton } from '../components';
 
 export default function DashboardLayout({ children }) {
   return (

@@ -8,32 +8,32 @@ generator client {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
+  id       String @id @default(uuid())
   email    String @unique
   password String
   quizzes  Quiz[]
 }
 
 model Quiz {
-  id        Int        @id @default(autoincrement())
+  id        String     @id @default(uuid())
   title     String
   questions Question[]
-  userId    Int
+  userId    String
   user      User       @relation(fields: [userId], references: [id])
 }
 
 model Question {
-  id       Int      @id @default(autoincrement())
+  id       String   @id @default(uuid())
   question String
   answer   String
   options  Option[]
-  quizId   Int
+  quizId   String
   quiz     Quiz     @relation(fields: [quizId], references: [id])
 }
 
 model Option {
-  id         Int      @id @default(autoincrement())
+  id         String   @id @default(uuid())
   text       String
-  questionId Int
+  questionId String
   question   Question @relation(fields: [questionId], references: [id])
 }

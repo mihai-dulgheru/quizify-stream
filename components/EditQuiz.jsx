@@ -4,9 +4,9 @@ import { QuizForm } from '.';
 import { updateQuiz } from '../services/quiz-service';
 
 export default function EditQuiz({ userId, quiz }) {
-  const handleSaveQuiz = async (quizData) => {
+  const saveQuizData = async (quizData) => {
     await updateQuiz(quiz?.id, quizData);
   };
 
-  return <QuizForm onSave={handleSaveQuiz} quiz={quiz} userId={userId} />;
+  return <QuizForm onSave={saveQuizData} quiz={quiz} userId={userId} />;
 }

@@ -1,10 +1,15 @@
 export default function QuestionCard({
-  question,
+  currentQuestionIndex,
   onAnswerSelect,
+  question,
   selectedOption,
+  totalQuestions,
 }) {
   return (
     <div className="mb-4 w-full">
+      <h1>
+        Întrebarea {currentQuestionIndex + 1} din {totalQuestions}
+      </h1>
       <h2 className="text-2xl font-semibold">{question.question}</h2>
       <div>
         {question.options.map((option, index) => (

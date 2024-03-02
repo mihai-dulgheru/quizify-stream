@@ -48,6 +48,14 @@ export default function QuizDetails({ quiz }) {
         <p className="mb-8 text-center">
           Scorul tău este {score} din {quiz.questions.length}.
         </p>
+        {wrongAnswers.length === 0 && (
+          <>
+            <h2 className="mb-4 text-center text-3xl font-bold">
+              Felicitări! Nu ai niciun răspuns greșit.
+            </h2>
+            {/* TODO Add an image or a gif to celebrate the perfect score */}
+          </>
+        )}
         {wrongAnswers.length > 0 && (
           <>
             <h2 className="mb-4 text-center text-3xl font-bold">
@@ -65,6 +73,7 @@ export default function QuizDetails({ quiz }) {
             </ul>
           </>
         )}
+        {/* TODO Add a button to go back to the quizzes page */}
       </div>
     );
   }
@@ -73,16 +82,19 @@ export default function QuizDetails({ quiz }) {
     <div className="grid h-screen w-screen place-items-center p-8">
       <h1 className="mb-8 text-center text-4xl font-bold">{quiz.title}</h1>
       <QuestionCard
-        question={question}
+        currentQuestionIndex={currentQuestionIndex}
         onAnswerSelect={handleAnswerSelect}
+        question={question}
         selectedOption={selectedOption}
+        totalQuestions={quiz.questions.length}
       />
       <div className="mt-4 flex justify-center">
         <button
           className="rounded bg-blue-500 p-2 text-white"
+          disabled={!selectedOption}
           onClick={goToNextQuestion}
         >
-          {isLastQuestion ? 'Submit' : 'Next Question'}
+          {isLastQuestion ? 'Trimite' : 'Următoarea Întrebare'}
         </button>
       </div>
     </div>

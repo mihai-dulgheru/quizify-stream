@@ -12,6 +12,19 @@ async function createQuiz(quizData) {
   return response.json();
 }
 
+async function importQuiz(formData) {
+  const response = await fetch('/api/quizzes/import', {
+    method: 'POST',
+    body: formData,
+  });
+
+  if (!response.ok) {
+    throw new Error('Eroare la importul quiz-ului');
+  }
+
+  return response.json();
+}
+
 async function updateQuiz(quizId, quizData) {
   if (!quizId) {
     throw new Error('Id-ul quiz-ului este obligatoriu');
@@ -30,4 +43,4 @@ async function updateQuiz(quizId, quizData) {
   return response.json();
 }
 
-export { createQuiz, updateQuiz };
+export { createQuiz, importQuiz, updateQuiz };

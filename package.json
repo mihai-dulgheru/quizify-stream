@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prisma:seed": "node prisma/seed.js",
+    "prisma:seed": "node prisma/seed.mjs",
     "prepare": "husky"
   },
   "dependencies": {
@@ -26,6 +26,7 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
+    "eslint-plugin-react": "^7.33.2",
     "husky": "^9.0.10",
     "lint-staged": "^15.2.2",
     "postcss": "^8",

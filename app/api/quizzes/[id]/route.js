@@ -1,14 +1,14 @@
 import prisma from '@/prisma/client';
 
-export async function DELETE(request, context = { params }) {
+export async function DELETE(_request, context) {
   const { id } = context.params;
 
   try {
     await prisma.option.deleteMany({
-      where: { question: { quizId: parseInt(id) } },
+      where: { question: { quizId: id } },
     });
-    await prisma.question.deleteMany({ where: { quizId: parseInt(id) } });
-    await prisma.quiz.delete({ where: { id: parseInt(id) } });
+    await prisma.question.deleteMany({ where: { quizId: id } });
+    await prisma.quiz.delete({ where: { id: id } });
 
     return new Response(JSON.stringify({ message: 'Quiz deleted' }), {
       status: 200,
@@ -22,13 +22,13 @@ export async function DELETE(request, context = { params }) {
   }
 }
 
-export async function PUT(request, context = { params }) {
+export async function PUT(request, context) {
   const { id } = context.params;
   const { quizTitle, questions, userId } = await request.json();
 
   try {
     const quiz = await prisma.quiz.findFirst({
-      where: { id: parseInt(id), userId: parseInt(userId) },
+      where: { id: id, userId: userId },
     });
 
     if (!quiz) {
@@ -39,12 +39,12 @@ export async function PUT(request, context = { params }) {
     }
 
     await prisma.option.deleteMany({
-      where: { question: { quizId: parseInt(id) } },
+      where: { question: { quizId: id } },
     });
-    await prisma.question.deleteMany({ where: { quizId: parseInt(id) } });
+    await prisma.question.deleteMany({ where: { quizId: id } });
 
     const updatedQuiz = await prisma.quiz.update({
-      where: { id: parseInt(id) },
+      where: { id: id },
       data: {
         title: quizTitle,
         questions: {
