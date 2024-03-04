@@ -1,4 +1,5 @@
 export { default as BackButton } from './BackButton';
+export { default as Confetti } from './Confetti';
 export { default as CreateQuiz } from './CreateQuiz';
 export { default as EditQuiz } from './EditQuiz';
 export { default as ImportQuiz } from './ImportQuiz';

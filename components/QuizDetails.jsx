@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { WrongAnswer } from '.';
+import { Confetti, WrongAnswer } from '.';
 import QuestionCard from './QuestionCard';
 
 export default function QuizDetails({ quiz }) {
@@ -53,7 +53,7 @@ export default function QuizDetails({ quiz }) {
             <h2 className="mb-4 text-center text-3xl font-bold">
               Felicitări! Nu ai niciun răspuns greșit.
             </h2>
-            {/* TODO Add an image or a gif to celebrate the perfect score */}
+            <Confetti showConfetti />
           </>
         )}
         {wrongAnswers.length > 0 && (
