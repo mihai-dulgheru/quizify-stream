@@ -1,7 +1,9 @@
-function WrongAnswer({ question, userAnswer, correctAnswer }) {
+export default function WrongAnswer({ question, userAnswer, correctAnswer }) {
   return (
-    <li className="ml-4">
-      <h3 className="text-xl font-semibold">{question}</h3>
+    <li>
+      <h3 className="text-lg font-normal md:text-xl md:font-medium">
+        {question}
+      </h3>
       <p>
         Răspunsul tău:{' '}
         <span className="font-semibold text-red-600">{userAnswer}</span>
@@ -13,5 +15,3 @@ function WrongAnswer({ question, userAnswer, correctAnswer }) {
     </li>
   );
 }
-
-export default WrongAnswer;

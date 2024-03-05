@@ -1,4 +1,4 @@
-function QuizImportTutorial() {
+export default function QuizImportTutorial() {
   return (
     <div className="mb-4 rounded bg-white px-8 pb-8 pt-6 shadow-md">
       <h2 className="mb-2 block text-xl font-bold text-gray-700">
@@ -41,5 +41,3 @@ function QuizImportTutorial() {
     </div>
   );
 }
-
-export default QuizImportTutorial;

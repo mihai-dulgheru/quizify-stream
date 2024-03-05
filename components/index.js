@@ -1,5 +1,7 @@
 export { default as BackButton } from './BackButton';
+export { default as BackToQuizzesLink } from './BackToQuizzesLink';
 export { default as Confetti } from './Confetti';
+export { default as CongratulationsMessage } from './CongratulationsMessage';
 export { default as CreateQuiz } from './CreateQuiz';
 export { default as EditQuiz } from './EditQuiz';
 export { default as ImportQuiz } from './ImportQuiz';
@@ -10,6 +12,9 @@ export { default as QuizCard } from './QuizCard';
 export { default as QuizDetails } from './QuizDetails';
 export { default as QuizForm } from './QuizForm';
 export { default as QuizImportTutorial } from './QuizImportTutorial';
+export { default as QuizResult } from './QuizResult';
+export { default as QuizResultHeader } from './QuizResultHeader';
+export { default as QuizResultView } from './QuizResultView';
 export { default as QuizTitleInput } from './QuizTitleInput';
 export { default as SignUpForm } from './SignUpForm';
 export { default as ViewQuiz } from './ViewQuiz';

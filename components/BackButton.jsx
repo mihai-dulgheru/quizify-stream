@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 
-function BackButton() {
+export default function BackButton() {
   const router = useRouter();
 
   return (
@@ -11,5 +11,3 @@ function BackButton() {
     </div>
   );
 }
-
-export default BackButton;

@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 import { QuizImportTutorial } from '.';
 import { importQuiz } from '../services/quiz-service';
 
-function ImportQuiz({ userId }) {
+export default function ImportQuiz({ userId }) {
   const [file, setFile] = useState(null);
   const router = useRouter();
 
@@ -45,5 +45,3 @@ function ImportQuiz({ userId }) {
     </div>
   );
 }
-
-export default ImportQuiz;

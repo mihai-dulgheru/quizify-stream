@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 const COLOR_DIGIT = 'ABCDEF1234567890';
 const SHAPES = ['square', 'triangle'];
 
-function Confetti({
+export default function Confetti({
   confettiCount = 100,
   duration = 4000,
   showConfetti = false,
@@ -60,5 +60,3 @@ function Confetti({
     />
   );
 }
-
-export default Confetti;
